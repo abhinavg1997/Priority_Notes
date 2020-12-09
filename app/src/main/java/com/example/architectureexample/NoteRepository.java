@@ -42,7 +42,8 @@ new deleteNoteAsyncTask(noteDao).execute(note);
 
     public LiveData<List<Note>> getSearched(String search)
     {
-        return noteDao.getSearchedNotes(search);
+        String search1 = "%" + search + "%";
+        return noteDao.getSearchedNotes(search1);
     }
 
     private static class insertNoteAsyncTask extends AsyncTask<Note,Void,Void>{

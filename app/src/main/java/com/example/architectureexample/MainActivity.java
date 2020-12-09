@@ -96,6 +96,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         et_searchBar = findViewById(R.id.searchBar);
+        et_searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String query = s.toString();
+                noteViewModel.getSearcged(query).observe(MainActivity.this, new Observer<List<Note>>() {
+                    @Override
+                    public void onChanged(List<Note> notes) {
+                        adapter.setNotes(notes);
+                    }
+                });
+            }
+        });
 //        et_searchBar.addTextChangedListener(new TextWatcher() {
 //
 //            @Override
