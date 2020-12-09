@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Note> notes) {
                 adapter.setNotes(notes);
 
-                Toast.makeText(MainActivity.this, "woah,changes occured"
-                        , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "woah,changes occured"
+//                        , Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
             noteViewModel.update(note);
             Toast.makeText(this, "Note Updated", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "No action", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "No action", Toast.LENGTH_SHORT).show();
         }
     }
 
